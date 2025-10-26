@@ -122,7 +122,7 @@ def normalize_cfg_echo_paths(content, hud_name):
         return f'{prefix}{path}{suffix}'
 
     return re.sub(
-        r'(echo\s+#base\s+)(.*?\.res)(.*?["\'])',
+        r'(echo\s+["\']?#base["\']?\s+["\']?)(.*?\.(?:res|vmt))(["\']?.*)',
         normalize_echo_path,
         content,
         flags=re.IGNORECASE
